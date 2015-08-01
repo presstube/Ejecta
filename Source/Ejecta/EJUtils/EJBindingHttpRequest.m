@@ -185,7 +185,7 @@ EJ_BIND_FUNCTION(abort, ctx, argc, argv) {
 
 EJ_BIND_FUNCTION(getAllResponseHeaders, ctx, argc, argv) {
 	if( !response || ![response isKindOfClass:[NSHTTPURLResponse class]] ) {
-		return NULL;
+		NSStringToJSValue(ctx, @"");
 	}
 	
 	NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)response;
